@@ -21,3 +21,11 @@ body {
 #inbox > table {
   text-align:left;  
 }
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
