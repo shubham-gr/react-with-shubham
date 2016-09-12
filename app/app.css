@@ -24,8 +24,14 @@ body {
 
 .visible {
   visibility: visible;
+  color: red;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+tr.highlight-row {
+  outline: solid thin;
+  color: #eee;
 }

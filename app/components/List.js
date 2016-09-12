@@ -2,41 +2,47 @@ import React from 'react';
 import autoBind from 'react-autobind';
 import ListItem from './ListItem';
 
-class List extends React.Component {
-	constructor(props) {
-	    super(props);
-	    autoBind(this);
-	}
+const List = React.createClass ({
+	//initiate List
+	getInitialState() {
+		return {
 
+		}
+	},
+
+	// render List Component
 	renderData() {
 		let listItems = this.props.employees.map( (employee) => {
-			return (<ListItem key={employee.id} details = {employee} />)
+			return (<ListItem key={employee.id} onEditEmployee = {this.props.onEditEmployee} onDeleteEmployee = {this.props.onDeleteEmployee} editClass ={employee.id === this.props.activeId ? 'highlight-row' : null}  details = {employee} />)
 		})
 		return(listItems)
-	}
+	},
 
 	render() {
-		console.log()
 		return (
 			<div>
-				<div className="page-header">
+				<div>
 					<h1>Employees<small>@techRacers</small></h1>
 				</div>
 				<table id="list">
 					<thead>
-	            <td>#</td>
-	            <td>name</td>
-	            <td>age</td>
-	            <td>email</td>
-	            <td>gender</td>
+						<tr>
+	            <th>#</th>
+	            <th>Name</th>
+	            <th>Age</th>
+	            <th>Email</th>
+	            <th>Gender</th>
+	            <th>Edit</th>
+	            <th>Delete</th>
+	          </tr>
 	        </thead>
-	        <tbody >
+	        <tbody>
 							{this.renderData()}
 					</tbody>		
 				</table>
 			</div>	
-			)
+		)
 	}
-}
+})
 
 export default List
