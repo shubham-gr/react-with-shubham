@@ -1,5 +1,4 @@
 import React from 'react';
-import autoBind from 'react-autobind';
 
 const Form = React.createClass ({
   // Initiate Form Component
@@ -15,9 +14,9 @@ const Form = React.createClass ({
   propTypes: {
     currentEmployee: React.PropTypes.object.isRequired,
     onCancel: React.PropTypes.func.isRequired,
-    addEmployee: React.PropTypes.func.isRequired,
-    updateEmployee: React.PropTypes.func.isRequired,
-    action: React.PropTypes.string.isRequired
+    onAddEmployee: React.PropTypes.func.isRequired,
+    onUpdateEmployee: React.PropTypes.func.isRequired,
+    buttonAction: React.PropTypes.string.isRequired
   },
 
   //run when get the props from parent
@@ -67,10 +66,14 @@ const Form = React.createClass ({
       return false;
     }
     else{
-      if(this.props.action == 'update')
-        this.props.updateEmployee(this.state.employee);
-      else if(this.props.action == 'add')
-        this.props.addEmployee(this.state.employee);
+      if(this.props.buttonAction == 'update') {
+        console.log('updateinginignfnnnnnnnnnifgnnnnnnnnnggggggg')
+        this.props.onUpdateEmployee(this.state.employee);
+      }  
+      else if(this.props.buttonAction == 'add') {
+        console.log("adddddddasdadddddddddddd");
+        this.props.onAddEmployee(this.state.employee);
+      }  
     }
   },
 
@@ -131,7 +134,7 @@ const Form = React.createClass ({
           <option>Female</option>
         </select>   
         <br></br>
-        <button type = "submit">{this.props.action}</button>
+        <button type = "submit">{this.props.buttonAction}</button>
         <button onClick = {this.props.onCancel} >cancel</button>
       </form>  
     )    

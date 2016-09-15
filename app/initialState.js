@@ -1,5 +1,5 @@
 module.exports = {
-  "employees": [
+  employees: [
      {
       "id": "1",
       "name": "shubham patwa",
@@ -13,6 +13,10 @@ module.exports = {
       "age": "22",
       "email": "spatwa@grepruby.com",
       "gender": "Male"
-    },
-  ]
+    }
+  ],
+  currentEmployee: {},
+  activeId: '',
+  index: 0,
+  buttonAction: 'add'
 }

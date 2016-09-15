@@ -1,5 +1,5 @@
-# PizzaBotManager
-Sample app for the React MVA
+# Employee Management
+Sample app for the React
 
 ## Dependencies:
 * React
@@ -21,3 +21,4 @@ npm install -g typings
 typings install --ambient react-global
 ```
 Learning React.
+# react-with-shubham

@@ -5,7 +5,7 @@ module.exports = {
   context: path.join(__dirname, 'app'), //current folder as the reference to the other paths
 
   entry: {
-    javascript: './routes.js', //entry point for building scripts
+    javascript: './index.js', //entry point for building scripts
     html: './index.html'       //entry point for building html
   },
   output: { 
