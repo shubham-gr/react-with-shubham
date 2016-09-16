@@ -1,6 +1,6 @@
 import React from 'react';
-import ShowEmployeeList from '../containers/showEmployeeList';
-import ShowForm from '../containers/showForm';
+import ShowEmployeeList from '../containers/ShowEmployeeList';
+import EmployeeForm from '../containers/EmployeeForm';
 
 const App = React.createClass ({
 
@@ -9,7 +9,8 @@ const App = React.createClass ({
     return (
       <div>
           <ShowEmployeeList />     
-          <ShowForm />
+          <EmployeeForm />
+          {this.props.children}
       </div>
     )
   }
